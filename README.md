@@ -1,10 +1,20 @@
 MapReduce
 =========
 
-Implementations of different Map Reduce algorithms, that were run of large datasets. 
+Project Objectives:
+ - To gain working experience with Hadoop and Map Reduce
+ - To understand Graph Algorithms such as PageRank
+ - Running PageRank and other Algorithms that rely on Map Reduce
 
-The algorithms implemented are WordCount, PhraseFrequency, and PageRank. 
 
-The WordCount and PhraseFrequency were executed on the Twitter MemeTracker Dataset, to find the most popular words and phrases in the dataset.
+I wrote different algorithms using the Map Reduce technique, and ran them on different datasets. These algorithms were
 
-The PageRank algorithm was executed on the Wikipedia PageLink dataset. This implementation of PageRank consists of two classes: ParseDataet.java and PageRank.java. Since the Wikipedia dataset was cluttered with extraneious information, the important data had to be parsed into a more easily scannable format. Then PageRank was executed on the parsed dataset. 
+  - WordCount - a simple Map Reduce algorithm that counted the total number of unique words in the dataset
+  - Phrase Frequency - similar to WordCount, this algorithm found unique Phrases (of different and same size chunks).
+  - Page Rank - this algorithm ranked the Wikipedia PageLink dataset in order of popularity, where popularity was decided by the number of articles that linked from one article. 
+
+The DataSets included the Twitter MemeTracker dataset (10 GB). The dataset contained links to memes and captions for each link, as well as links that led to the meme. Word Count and Phrase Freuqency was run on the captions. 
+
+The other Dataset was the Wikipedia PageLink dataset (27 GB). The data contains inter-article pagelinks for each article in Wikipedia. 
+
+Project and project results by Ravish Chawla, Sourabh Bajaj, and Xialin Yan.
