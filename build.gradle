@@ -1,0 +1,61 @@
+
+apply plugin: 'java'
+defaultTasks 'jar'
+
+version = '1.0'
+MAIN_CLASS = 'WordCount'
+CLASS_PATH = ''
+
+sourceSets {
+	main {
+		java {
+			srcDirs =  ['src']
+			}
+		}
+	}
+
+sourceSets {
+	test {
+		java {
+			srcDirs = ['src/test']
+			}
+		}
+	}
+
+repositories {
+	flatDir {
+		name 'localRepository'
+	}
+}
+
+repositories {
+	localRepository {
+		dirs 'lib'
+	}
+}
+
+dependencies {
+	
+	testCompile(group: 'junit', name: 'junit');
+	testCompile(group: 'org.hamcrest', name: 'org.hamcrest-core')
+}
+
+task hello {
+	doLast {
+		println "$word1 $word2"
+	}
+}
+
+javadoc{
+	source = sourceSets.main.allJava
+	classpath = configurations.compile
+}
+
+jar{
+	manifest {
+		attributes 'Manifest-Version': version, 'Created-By': 'Ravish Chawla', 'Signature-Version': version, 'Class-Path': CLASS_PATH, 'Main-Class': MAIN_CLASS
+		}
+
+	}	
+
+
